@@ -1,0 +1,5 @@
+ID;title;location_ID;locationName;level
+101;Bucket1;201;Dietmar-Hopp-Allee;false
+102;Bucket2;202;Rudolf-Diesel-Strasse;true
+103;Glas-Container1;203;Daimlerstrasse;false
+104;Glas-Container2;204;Robert-Bosch-Strasse;true

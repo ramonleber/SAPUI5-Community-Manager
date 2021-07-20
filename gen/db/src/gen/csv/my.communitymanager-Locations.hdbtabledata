@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "MY_COMMUNITYMANAGER_LOCATIONS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "my.communitymanager-Locations.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ";"
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "NAME",
+          "LONG",
+          "LAT"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "NAME": "name",
+        "LONG": "long",
+        "LAT": "lat"
+      }
+    }
+  ]
+}

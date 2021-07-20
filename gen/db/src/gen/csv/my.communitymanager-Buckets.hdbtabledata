@@ -1,0 +1,33 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "MY_COMMUNITYMANAGER_BUCKETS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "my.communitymanager-Buckets.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ";"
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "TITLE",
+          "LOCATION_ID",
+          "LOCATIONNAME",
+          "LEVEL"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "TITLE": "title",
+        "LOCATION_ID": "location_ID",
+        "LOCATIONNAME": "locationName",
+        "LEVEL": "level"
+      }
+    }
+  ]
+}

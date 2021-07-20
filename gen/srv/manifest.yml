@@ -1,0 +1,9 @@
+---
+applications:
+  - name: community-manager-srv
+    path: .
+    memory: 256M
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - community-manager-db

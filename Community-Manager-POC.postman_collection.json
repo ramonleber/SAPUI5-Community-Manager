@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "5b536e93-0943-4fa0-99b3-8d0c2b28dbad",
+		"name": "Community-Manager-POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/disposal/Locations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"disposal",
+								"Locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buckets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/disposal/Buckets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"disposal",
+								"Buckets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calls without UUID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bucket_ID\": 101,\n  \"level\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4004/disposal/CallsForDisposal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"disposal",
+								"CallsForDisposal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calls with UUID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ID\": \"c13d3eec-942e-470d-97b3-e03322136638\",\n  \"bucket_ID\": 101,\n  \"level\": false\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4004/disposal/CallsForDisposal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"disposal",
+								"CallsForDisposal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

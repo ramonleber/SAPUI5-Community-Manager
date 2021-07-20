@@ -1,0 +1,1 @@
+using DisposalService as service from '../../srv/com-service';

@@ -1,0 +1,69 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" controllerName="ns.fiori.controller.Worklist"><semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
+
+		<semantic:titleHeading>
+			<Title text="Community Manager"/>
+		</semantic:titleHeading>
+
+		<semantic:content>
+			<Table id="table" width="auto" items="{      path: '/Buckets',      sorter: {       path: 'title',       descending: false      }     }" noDataText="{worklistView>/tableNoDataText}" growing="true" growingScrollToLoad="true" updateFinished=".onUpdateFinished">
+
+				<headerToolbar>
+					<Toolbar>
+						<Title id="tableHeader" text="Buckets"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>worklistSearchTooltip}" search=".onSearch" width="auto">
+						</SearchField>
+					</Toolbar>
+				</headerToolbar>
+
+				<columns>
+					<Column id="nameColumn">
+						<Text text="Bucket ID" id="columnID"/>
+					</Column>
+					<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns="sap.m" id="unitNumberColumn_copy3" hAlign="Left">
+					    <header>
+					        <Text xmlns="sap.m" text="Title" id="columnTitle"/>
+					        
+					    </header>
+					    
+					</Column>
+					<Column id="unitNumberColumn" hAlign="Left">
+					<header>
+					    <Text xmlns="sap.m" text="Location" id="columnLocationID"/>
+					</header>
+					</Column>
+					<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns="sap.m" id="unitNumberColumn_copy2" hAlign="Left">
+					    <header>
+					        <Text xmlns="sap.m" text="Level" id="columnServiceCall"/>
+					        
+					    </header>
+					    
+					</Column>
+					<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns="sap.m" id="unitNumberColumn_copy4" hAlign="Left">
+					    <header>
+					        <Text xmlns="sap.m" text="Garbage Disposal" id="columnGarbageDisposal"/>
+					        
+					    </header>
+					    
+					</Column>
+				</columns>
+
+				<items><ColumnListItem type="Navigation" press=".onPress">
+						<cells>
+							<ObjectIdentifier title="{ID}" id="identifier0"/>
+							<ObjectAttribute text="{          path: 'title',          formatter: '.formatter.textUnit'         }" id="attribute0"/>
+							<ObjectNumber number="{          path: 'locationName',          formatter: '.formatter.integerUnit'         }" unit="{location}" id="number0"/>
+							<ObjectStatus xmlns="sap.m" id="status0" state="{= ${level} === 'Yes' ? 'Error' : 'Success'}" text="{= ${level} === 'Yes' ? 'Full' : 'Empty'}"/>
+							<ObjectStatus xmlns="sap.m" id="status1" state="{= ${level} === 'Yes' ? 'Warning' : 'Success'}" text="{= ${level} === 'Yes' ? 'In Service' : '-'}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+	</semantic:SemanticPage>
+</mvc:View>
